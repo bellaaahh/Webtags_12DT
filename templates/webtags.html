@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML and CSS Tags</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Web Tags</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/tags/html">HTML</a>
+            </li>
+            <li>
+                <a href="/tags/css">CSS</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2>{{ title }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <!-- a tag is for sorting by heading -->
+                    <th><a href="/tags/?sort=tag">Tag</a></th>
+                    <th><a href="/tags/?sort=description">Description</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tag in tags %}
+                <tr>
+                    <td>{{ tag[0] }}</td>
+                    <td>{{ tag[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+
+        </table>
+    </main>
+    <footer>
+        <p>&copy; D Benseman 2022</p>
+    </footer>
+</body>
+</html>
